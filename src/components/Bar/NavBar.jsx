@@ -9,7 +9,7 @@ const NavBar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleTheme = () =>
-    setTheme(theme === "luxury" ? "coporate" : "luxury");
+    setTheme(theme === "luxury" ? "corporate" : "luxury");
 
   const navLinks = [
     {to: "/", text: "Home"},
@@ -17,7 +17,9 @@ const NavBar = () => {
     {to: "/gallery", text: "Gallery"},
   ]
 
-  return <div></div>;
+  return <div>
+    Navbar
+  </div>;
 };
 
 export default NavBar;
