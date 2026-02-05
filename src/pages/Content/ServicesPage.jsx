@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import { useSearchParams, Link } from "react-router";
 import { Filter, Code, Palette, Brush, Building2, X } from "lucide-react";
 
-const PortfolioPage = () => {
+const ServicesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeFilter = searchParams.get("filter") || "all";
 
@@ -270,4 +270,4 @@ const PortfolioPage = () => {
   );
 };
 
-export default PortfolioPage;
+export default ServicesPage;

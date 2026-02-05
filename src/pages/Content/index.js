@@ -1,1 +1,1 @@
-export { default as PortfolioPage } from "./PortfolioPage";
+export { default as ServicesPage } from "./ServicesPage";
