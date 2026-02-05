@@ -4,7 +4,8 @@ import { Filter, Code, Palette, Brush, Building2, X } from "lucide-react";
 
 const ServicesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const activeFilter = searchParams.get("filter") || "all";
+  // Support both "filter" and "service" query parameters for flexibility
+  const activeFilter = searchParams.get("filter") || searchParams.get("service") || "all";
 
   // Portfolio categories
   const categories = [
