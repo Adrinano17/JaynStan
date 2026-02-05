@@ -170,10 +170,10 @@ const AboutPage = () => {
                 Looking Ahead
               </h2>
               <p className="text-lg text-base-content/80 leading-relaxed">
-                As we move forward, our vision remains clear: to elevate creative
-                expression in every form, bridging the worlds of art, fashion,
-                and entertainment while fostering a community that thrives on
-                innovation and collaboration.
+                As we move forward, our vision remains clear: to elevate
+                creative expression in every form, bridging the worlds of art,
+                fashion, and entertainment while fostering a community that
+                thrives on innovation and collaboration.
               </p>
             </div>
           </div>

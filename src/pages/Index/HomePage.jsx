@@ -64,7 +64,7 @@ const HomePage = () => {
       {/* Core Services*/}
       <section className="py-16 md:py-24 bg-base-300">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="text-center mb-12 animate">
+          <div className="text-center mb-12 animate-[fallIn_0.6s_ease-out_0.1s_both]">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Core Services
             </h2>
@@ -135,7 +135,21 @@ const HomePage = () => {
         </div>
       </section>
       {/* Sub-Sections */}
-      <section className="py-16 md:py-24 bg-base-200"></section>
+      <section className="relative min-h-[20vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/Divider.png"
+            alt="Divider Background"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/50 to-black/70"></div>
+        </div>
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+      </section>
+      <section className="relative min-h-[40vh] flex items-center overflow-hidden"></section>
     </div>
   );
 };
