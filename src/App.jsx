@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router";
-import { HomePage } from "./pages/Index";
+import { HomePage, AboutPage } from "./pages/Index";
 import { PortfolioPage } from "./pages/Content";
 import { NavBar, Footer } from "./components/Bar";
 import { useTheme } from "./context/ThemeContext";
@@ -20,7 +20,8 @@ const AppLayout = () => {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/portfolio" element={<PortfolioPage />}/> 
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
           </Routes>
         </main>
         <Footer />

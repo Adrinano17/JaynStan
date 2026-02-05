@@ -53,10 +53,9 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      {/*  */}
-      <section>
 
-      </section>
+      {/*  */}
+      <section></section>
     </div>
   );
 };
