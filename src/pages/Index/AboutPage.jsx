@@ -145,7 +145,7 @@ const AboutPage = () => {
               <p className="text-lg text-base-content/80 leading-relaxed">
                 Jaynstan Espire Enclave emerged from the collective dreams of
                 artists and innovators who sought to redefine the boundaries of
-                arts and fashion. Our journey is one of perseverance and
+                arts, tech, visuals and fashion. Our journey is one of perseverance and
                 inspiration, reflecting a vibrant tapestry of cultural
                 influences.
               </p>
