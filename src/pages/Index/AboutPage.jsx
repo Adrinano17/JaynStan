@@ -19,14 +19,13 @@ import {
 import toast from "react-hot-toast";
 
 const AboutPage = () => {
-
   /* Navigate to section */
   useEffect(() => {
     if (location.hash) {
       const element = document.getElementById(location.hash.substring(1));
       if (element) {
         setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
         }, 100);
       }
     }
@@ -37,19 +36,19 @@ const AboutPage = () => {
       role: "Creative Director",
       description:
         "Leading the charge in artistic direction, our Creative Director combines a keen sense of style with an innovative approach to projects, ensuring each concept resonates with our brand's essence.",
-      icon: Palette,
+      image: "/Creative Director.png",
     },
     {
-      role: "Brand Strategist",
+      role: "Art & Architectural Design Director",
       description:
-        "Our Brand Strategist crafts compelling narratives that connect our audience with our vision, employing a blend of market insight and creativity to build a powerful brand presence.",
-      icon: Target,
+        "Shaping spaces and experiences, our Art & Architectural Design Director combines visionary artistry with structural insight, delivering designs that are both inspiring and functional.",
+      image: "/Art Director.png",
     },
     {
       role: "Chief Technical Director",
       description:
-        "With a passion for storytelling, our Media Producer transforms ideas into captivating visuals, using cutting-edge techniques to bring our creative projects to life.",
-      icon: Eye,
+        "Leading innovation and technical excellence, our Chief Technical Director ensures every project runs seamlessly, merging cutting-edge solutions with strategic oversight.",
+      image: "/Technical Director.png",
     },
   ];
 
@@ -184,26 +183,24 @@ const AboutPage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => {
-              const IconComponent = member.icon;
-              return (
-                <div
-                  key={index}
-                  className="group bg-base-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-base-300 hover:border-primary/50"
-                >
-                  <div className="relative h-48 rounded-xl overflow-hidden bg-linear-to-br from-primary/10 to-secondary/10 mb-6 flex items-center justify-center">
-                    <IconComponent className="w-12 h-12 text-primary group-hover:scale-110 transition-transform duration-300" />
-                    <p className="absolute bottom-2 text-xs text-base-content/50 italic">
-                      Section image
-                    </p>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">{member.role}</h3>
-                  <p className="text-base-content/70 leading-relaxed">
-                    {member.description}
-                  </p>
+            {teamMembers.map((member, index) => (
+              <div
+                key={index}
+                className="group bg-base-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-base-300 hover:border-primary/50"
+              >
+                <div className="relative h-48 rounded-xl overflow-hidden bg-linear-to-br from-primary/10 to-secondary/10 mb-6 flex items-center justify-center">
+                  <img
+                    src={member.image}
+                    alt={member.role}
+                    className="absolute inset-0 h-full w-full object-cover object-[50%_20%]"
+                  />
                 </div>
-              );
-            })}
+                <h3 className="text-xl font-bold mb-3">{member.role}</h3>
+                <p className="text-base-content/70 leading-relaxed">
+                  {member.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -212,12 +209,12 @@ const AboutPage = () => {
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-base-200/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full text-accent font-semibold text-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full text-accent/90 font-semibold text-sm">
               <Globe size={16} />
-              <span>Cultural Conversations</span>
+              <span>Delivered works</span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-              Exploring our role in shaping cultural narratives.
+              Explore services that have been delivered
             </h2>
           </div>
 
@@ -225,7 +222,7 @@ const AboutPage = () => {
             {culturalPosts.map((post, index) => (
               <Link
                 key={index}
-                to={`/portfolio?filter=${post.filter}`}
+                to={`/services?filter=${post.filter}`}
                 className="group bg-base-100 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-base-300 hover:border-accent/50 cursor-pointer"
               >
                 <div className="flex items-start gap-4">
@@ -260,9 +257,8 @@ const AboutPage = () => {
                   Jaynstan
                 </h2>
                 <p className="text-lg text-base-content/80 leading-relaxed">
-                  We are a creative hub
-                  dedicated to pushing the boundaries of art, fashion, and
-                  innovation.
+                  We are a creative hub dedicated to pushing the boundaries of
+                  art, fashion, and innovation.
                 </p>
               </div>
               <div>
@@ -379,7 +375,10 @@ const AboutPage = () => {
                     placeholder="Your message here..."
                   />
                 </div>
-                <button type="submit" className="w-full btn btn-primary gap-2 btn-outline ">
+                <button
+                  type="submit"
+                  className="w-full btn btn-primary gap-2 btn-outline "
+                >
                   <Send size={18} />
                   Send Message
                 </button>
