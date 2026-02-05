@@ -151,6 +151,21 @@ const HomePage = () => {
       </section>
       {/*  */}
       <section className="relative min-h-[40vh] flex items-center overflow-hidden"></section>
+
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0 bg-linear-to-br from-primary/10 via-secondary/5 to-accent/10"></div>
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+        <img
+          src="/Group.png"
+          alt="Divider Background"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_30%]"
+        />
+
+       
+      </section>
     </div>
   );
 };

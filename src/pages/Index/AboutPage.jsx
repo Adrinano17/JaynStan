@@ -75,8 +75,16 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen bg-base-100">
       {/* Hero Section - The Genesis */}
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-br from-primary/10 via-secondary/5 to-accent/10"></div>
+      <section className="relative min-h-[56vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/Group.png"
+            alt="Hero Background"
+            className="absolute inset-0 h-full w-full object-cover object-[50%_50%]"
+          />
+          <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/70"></div>
+        </div>
+
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -84,12 +92,14 @@ const AboutPage = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 backdrop-blur-sm rounded-full text-primary font-semibold text-sm border border-primary/30">
-              <Sparkles size={16} />
-              <span>The Genesis of Jaynstan Espire Enclave</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/30 backdrop-blur-md rounded-full text-white font-semibold text-sm border border-primary/40 shadow-lg">
+              <Sparkles size={16} className="drop-shadow-glow" />
+              <span className="drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">The Genesis of Jaynstan Espire Enclave</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Where art meets ambition—our creative journey begins.
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+              <span className="inline-block bg-black/40 backdrop-blur-sm px-6 py-3 rounded-2xl shadow-2xl border border-white/10">
+                Where art meets ambition—our creative journey begins.
+              </span>
             </h1>
           </div>
         </div>
@@ -100,7 +110,7 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/20 rounded-full text-secondary font-semibold text-sm">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/20 rounded-full text-error font-semibold text-sm">
                 <Heart size={16} />
                 <span>A Vision Realized</span>
               </div>
@@ -117,10 +127,11 @@ const AboutPage = () => {
             </div>
             <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden bg-linear-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
               <div className="text-center space-y-4 p-8">
-                <Sparkles className="w-16 h-16 mx-auto text-primary" />
-                <p className="text-base-content/70 italic">
-                  Section image placeholder
-                </p>
+                <img
+                  src="/Divider.png"
+                  alt="Hero Background"
+                  className="absolute inset-0 h-full w-full object-cover object-[50%_50%]"
+                />
               </div>
             </div>
           </div>
