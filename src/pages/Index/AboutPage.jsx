@@ -29,7 +29,7 @@ const AboutPage = () => {
       icon: Target,
     },
     {
-      role: "Media Producer",
+      role: "Chief Technical Director",
       description:
         "With a passion for storytelling, our Media Producer transforms ideas into captivating visuals, using cutting-edge techniques to bring our creative projects to life.",
       icon: Eye,
@@ -110,7 +110,7 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/20 rounded-full text-error font-semibold text-sm">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 rounded-full text-primary font-semibold text-sm">
                 <Heart size={16} />
                 <span>A Vision Realized</span>
               </div>
@@ -128,64 +128,11 @@ const AboutPage = () => {
             <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden bg-linear-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
               <div className="text-center space-y-4 p-8">
                 <img
-                  src="/Divider.png"
+                  src="/Founders.png"
                   alt="Hero Background"
-                  className="absolute inset-0 h-full w-full object-cover object-[50%_50%]"
+                  className="absolute inset-0 h-full w-full object-cover object-[50%_10%]"
                 />
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Milestones of Creativity */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-base-200/50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full text-accent font-semibold text-sm">
-              <Award size={16} />
-              <span>Milestones of Creativity</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-              Milestones of Creativity
-            </h2>
-            <p className="text-lg text-base-content/80 max-w-3xl mx-auto leading-relaxed">
-              Over the years, we have celebrated numerous milestones, from
-              launching groundbreaking fashion lines to producing captivating
-              media projects. Each achievement is a testament to our commitment
-              to quality and artistic expression, continually pushing the
-              envelope of what is possible.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Looking Ahead */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden bg-linear-to-br from-secondary/20 to-accent/20 flex items-center justify-center order-2 md:order-1">
-              <div className="text-center space-y-4 p-8">
-                <Target className="w-16 h-16 mx-auto text-secondary" />
-                <p className="text-base-content/70 italic">
-                  Section image placeholder
-                </p>
-              </div>
-            </div>
-            <div className="space-y-6 order-1 md:order-2">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 rounded-full text-primary font-semibold text-sm">
-                <Target size={16} />
-                <span>Looking Ahead</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-                Looking Ahead
-              </h2>
-              <p className="text-lg text-base-content/80 leading-relaxed">
-                As we move forward, our vision remains clear: to elevate
-                creative expression in every form, bridging the worlds of art,
-                fashion, and entertainment while fostering a community that
-                thrives on innovation and collaboration.
-              </p>
             </div>
           </div>
         </div>
