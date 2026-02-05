@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router";
 import {
   Sparkles,
   Users,
   Target,
   Heart,
-  Lightbulb,
-  Shield,
   Globe,
   Calendar,
   ArrowRight,
   Award,
   Eye,
   Palette,
+  Mail,
+  Send,
+  MessageSquare,
+  User,
 } from "lucide-react";
+import toast from "react-hot-toast";
 
 const AboutPage = () => {
   const teamMembers = [
@@ -36,41 +40,48 @@ const AboutPage = () => {
     },
   ];
 
-  const coreValues = [
-    {
-      title: "Creativity",
-      description:
-        "At the heart of Jaynstan Espire Enclave lies an unwavering commitment to creativity. We believe in pushing boundaries and exploring new ideas, allowing our artistic spirits to shine and inspire others. Each project reflects our dedication to innovation and self-expression.",
-      icon: Lightbulb,
-    },
-    {
-      title: "Integrity",
-      description:
-        "Integrity is the foundation of our operations. We engage transparently with our clients, partners, and community, cultivating trust through ethical practices and high-quality work. Our commitment to honesty and accountability guides every decision we make.",
-      icon: Shield,
-    },
-    {
-      title: "Cultural Enrichment",
-      description:
-        "We recognize the importance of cultural diversity and actively seek to enrich our community through our projects. By celebrating various cultural influences, we create an inclusive space that honors creativity in all its forms, fostering unity and appreciation.",
-      icon: Globe,
-    },
-  ];
-
   const culturalPosts = [
     {
       title: "Fashion as a Cultural Statement",
       date: "February 4, 2026",
+      filter: "graphic-design",
     },
     {
       title: "Art and Activism: A Powerful Alliance",
       date: "February 4, 2026",
+      filter: "artwork-painting",
     },
     {
       title: "Engaging with Emerging Artists",
       date: "February 4, 2026",
+      filter: "graphic-design",
     },
   ];
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Here you would typically send the form data to a backend
+    toast.success("Thank you for your message! We'll get back to you soon.");
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+  };
 
   return (
     <div className="min-h-screen bg-base-100">
@@ -229,44 +240,6 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* The Core of Our Brand */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/20 rounded-full text-secondary font-semibold text-sm">
-              <Heart size={16} />
-              <span>The Core of Our Brand</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-              Guided by our principles, we strive for excellence.
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {coreValues.map((value, index) => {
-              const IconComponent = value.icon;
-              return (
-                <div
-                  key={index}
-                  className="group bg-base-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-base-300 hover:border-secondary/50"
-                >
-                  <div className="relative h-48 rounded-xl overflow-hidden bg-linear-to-br from-secondary/10 to-accent/10 mb-6 flex items-center justify-center">
-                    <IconComponent className="w-12 h-12 text-secondary group-hover:scale-110 transition-transform duration-300" />
-                    <p className="absolute bottom-2 text-xs text-base-content/50 italic">
-                      Section image
-                    </p>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">{value.title}</h3>
-                  <p className="text-base-content/70 leading-relaxed">
-                    {value.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Cultural Conversations */}
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-base-200/50">
         <div className="max-w-7xl mx-auto">
@@ -282,8 +255,9 @@ const AboutPage = () => {
 
           <div className="grid md:grid-cols-3 gap-6">
             {culturalPosts.map((post, index) => (
-              <div
+              <Link
                 key={index}
+                to={`/portfolio?filter=${post.filter}`}
                 className="group bg-base-100 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-base-300 hover:border-accent/50 cursor-pointer"
               >
                 <div className="flex items-start gap-4">
@@ -301,8 +275,149 @@ const AboutPage = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            {/* Left Column - Jaynstan Info and Connect */}
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Jaynstan</h2>
+                <p className="text-lg text-base-content/80 leading-relaxed">
+                  Jaynstan keydfqfgjwhfgjkwrh fsbkrhwfvsjkvfsklv ljvhfeigvrifefoejv
+                  ofheufgvieufv. We are a creative hub dedicated to pushing the
+                  boundaries of art, fashion, and innovation.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold mb-4">Connect</h3>
+                <ul className="space-y-3">
+                  <li>
+                    <a
+                      href="https://instagram.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-base-content/80 hover:text-primary transition-colors flex items-center gap-2"
+                    >
+                      <span>Instagram</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://facebook.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-base-content/80 hover:text-primary transition-colors flex items-center gap-2"
+                    >
+                      <span>Facebook</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://twitter.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-base-content/80 hover:text-primary transition-colors flex items-center gap-2"
+                    >
+                      <span>Twitter</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://linkedin.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-base-content/80 hover:text-primary transition-colors flex items-center gap-2"
+                    >
+                      <span>Linkedin</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Right Column - Contact Form */}
+            <div className="bg-base-200 rounded-2xl p-8 shadow-lg">
+              <div className="flex items-center gap-2 mb-6">
+                <MessageSquare className="w-6 h-6 text-primary" />
+                <h3 className="text-2xl font-bold">Contact Form</h3>
+              </div>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium mb-2"
+                  >
+                    Name
+                  </label>
+                  <div className="relative">
+                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-base-content/40" />
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full pl-10 pr-4 py-3 bg-base-100 border border-base-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      placeholder="Your name"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium mb-2"
+                  >
+                    Email
+                  </label>
+                  <div className="relative">
+                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-base-content/40" />
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full pl-10 pr-4 py-3 bg-base-100 border border-base-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      placeholder="your.email@example.com"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium mb-2"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    rows={6}
+                    className="w-full px-4 py-3 bg-base-100 border border-base-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                    placeholder="Your message here..."
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full btn btn-primary gap-2"
+                >
+                  <Send size={18} />
+                  Send Message
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
